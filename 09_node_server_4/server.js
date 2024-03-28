@@ -16,9 +16,15 @@ const server = http.createServer((req,res) => {
             html_page = 'home.html'
             res.statusCode = 200
             break;
-        case '/home':
-            html_page = 'home.html'
-            res.statusCode = 200
+        case '/homepage':
+            res.setHeader('Location', '/')
+            res.statusCode = 301
+            res.end();
+            break;
+        case '/acerca':
+            res.setHeader('Location', '/')
+            res.statusCode = 301
+            res.end();
             break;
         case '/services':
             html_page = 'services.html'
