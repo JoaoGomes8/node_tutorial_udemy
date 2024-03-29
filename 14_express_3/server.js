@@ -12,6 +12,9 @@ app.get("/services", (req, res) => {
 app.get("/about", (req, res) => {
     res.sendFile('./views/about.html', {root: __dirname});
 })
+app.get("/acerca_de", (req, res) => {
+    res.redirect('/about')
+})
 app.use((req, res) => {
     res.status(404).sendFile('./views/404.html', {root: __dirname});
 })
